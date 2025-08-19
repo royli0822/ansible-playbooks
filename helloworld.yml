@@ -12,7 +12,7 @@
         msg: "{{ output.stdout_lines }}"
         
 - name: Play with Ansible with build server
-  hosts: build server
+  hosts: build-server
   tasks:
     - name: Just execute df -h
       ansible.builtin.command: df -h
