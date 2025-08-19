@@ -1,6 +1,6 @@
 ---
 - name: Play with Ansible
-  hosts: opengrok-server
+#  hosts: opengrok-server
   tasks:
     - name: Just execute df -h
       ansible.builtin.command: df -h
