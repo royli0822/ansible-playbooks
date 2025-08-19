@@ -1,6 +1,6 @@
 ---
-- name: Play with Ansible with opengrok server
-  hosts: opengrok-server
+- name: Play with Ansible
+  hosts: all
   tasks:
     - name: Just execute df -h
       ansible.builtin.command: df -h
@@ -11,14 +11,3 @@
       ansible.builtin.debug:
         msg: "{{ output.stdout_lines }}"
         
-- name: Play with Ansible with build server
-  hosts: build-server
-  tasks:
-    - name: Just execute df -h
-      ansible.builtin.command: df -h
-      register: output
-      changed_when: output.rc == 0
-
-    - name: Show stdout
-      ansible.builtin.debug:
-        msg: "{{ output.stdout_lines }}"
